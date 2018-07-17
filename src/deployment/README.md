@@ -4,8 +4,10 @@
 
 The `deployment` directory contains tools to:
 
- 1. Install miniconda.
- 2. Pull a version
+ 1. Install miniconda: `install-miniconda.sh`
+ 2. Install a jaspy environment: `install-jaspy-env.sh <jaspy_env_name>`
+ 3. Activate a jaspy environment: `activate-jaspy-env.sh <jaspy_env_name>`
+ 4. Deactivate the current jaspy environment: `deactivate-jaspy-env.sh`
 
 ## Configuration
 
