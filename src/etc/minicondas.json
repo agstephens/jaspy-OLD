@@ -1,0 +1,12 @@
+{
+  "minicondas": {
+    "python2.7": {
+       "source": "https://repo.continuum.io/miniconda/Miniconda2-4.5.4-Linux-x86_64.sh",
+       "md5": "8a1c02f6941d8778f8afad7328265cf5"
+    },
+    "python3.6": {
+       "source": "https://repo.continuum.io/miniconda/Miniconda3-4.5.4-Linux-x86_64.sh",
+       "md5":    "a946ea1d0c4a642ddf0c3a26a18bb16d"
+    }
+  }
+}
