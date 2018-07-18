@@ -30,3 +30,45 @@ distinction between them:
 In this plan we are only concerned with conda and miniconda. It is necessary to start with 
 miniconda in order to get a baseline python and conda installation. Once that is in place 
 conda is available to create and manage multiple environments.
+
+## Workflows
+
+There are four workflows related to `jaspy`:
+
+ 1. **User** workflow:
+   - Activate a `jaspy` environment
+   - Use software in that environment 
+
+ 2. **Platform Administrator** workflow:
+   - Install `jaspy`
+   - Install environment(s)
+   - Document usage of environment(s) for users
+
+ 3. **Environment Developer** workflow:
+   - Install `jaspy`
+   - Develop new environment(s)
+   - Save the new environment(s)
+   - Test the installation of the new environment(s)
+   - Commit the new environments(s) to the repository
+
+ 4. **Jaspy Core Developer** workflow:
+   - Install `jaspy`
+   - Develop and improve the core framework.
+   - Test and update the code.
+
+### Workflow 1: User
+
+Assuming that a Platform Administrator has installed `jaspy` then you can use it as
+explained here. Get your settings as recommended by your administrator:
+
+```
+export JASPY_INSTALL_DIR=...GET_THIS_FROM_YOUR_ADMINISTRATOR...
+export PY_VERSION=python3.6
+export PATH=${JASPY_INSTALL_DIR}/${PY_VERSION}/bin:$PATH
+```
+
+List the available `jaspy` conda environments:
+
+```
+
+$JASPY_BASE_DIR/bin
