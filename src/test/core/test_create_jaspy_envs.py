@@ -1,11 +1,13 @@
 import os, shutil
 import shlex, subprocess
+dn = os.path.dirname
 
 USER = os.environ.get('USER')
 TEST_DIR = os.environ.get('JASPY_TEST_DIR', '/home/{}/jaspy-test'.format(USER))
 
-THIS_DIR = os.path.dirname(os.path.realpath(__file__))
-SCRIPT_DIR = os.path.join(os.path.dirname(THIS_DIR), 'deployment')
+
+THIS_DIR = dn(os.path.realpath(__file__))
+SCRIPT_DIR = os.path.join(dn(dn(THIS_DIR)), 'deployment')
 
 
 def _clear_base_dir(jaspy_base_dir):

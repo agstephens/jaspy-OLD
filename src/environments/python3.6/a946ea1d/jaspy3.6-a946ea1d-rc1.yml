@@ -1,0 +1,273 @@
+name: jaspy3.6-a946ea1d-default
+channels:
+    - conda-forge
+    - defaults
+dependencies:
+    - python=3.6
+    - iris=2.1
+    - numpy=1.14
+    - scipy=1.1
+    - netcdf4=1.4
+    - cython
+    - matplotlib=2.2
+    - pillow 
+    - nc-time-axis
+    - cf_units
+    - netcdftime
+    - filelock
+    - pandas=0.23.1
+    - ipython
+    - gdal
+    - psycopg2
+    - pillow
+    - arpack
+    - basemap
+    - blas
+    - cartopy
+    - cdo
+    - cis
+    - cycler
+    - digestive::mule
+    - eofs
+    - esmf
+    - fftw
+    - geos
+    - git
+    - gnuplot
+    - graphviz
+    - virtualenv
+    - windspharm
+    - gsl
+    - h5py
+    - hdf5
+    - hdfeos2
+    - hdfeos5
+    - imagemagick
+    - iris-grib
+    - jasper
+    - jinja2
+    - lapack
+    - libcdms
+    - libdrs
+    - libuuid
+    - netcdf-cxx4
+    - netcdf-fortran
+    - octave
+    - ncl
+    - nco
+    - perl
+    - pyproj
+    - psutil
+    - pycairo
+    - pygrib
+    - pyhdf
+    - pyke
+    - pyparsing
+    - pyshp
+    - pyside
+    - pyspharm
+    - backports.ssl
+    - cdat-lite
+    - cfchecker
+    - cython
+    - python-dateutil
+    - iris-sample-data
+    - jug
+    - markupsafe
+    - mpi4py
+    - pydap
+    - pygmentize
+    - pygobject
+    - pyaml
+    - shapely
+    - wxpython
+    - pytz
+    - pyzmq
+    - geopandas
+    - xarray
+    - cerbere
+    - boto3
+    - pybtex
+    - ccplot
+    - ilamb
+    - ecmwfapi
+    - enum34
+    - emcee
+    - pystan
+    - statsmodels
+    - cftime
+    - descartes
+    - fiona
+    - pyugrid
+    - theano
+    - patsy
+    - kiwisolver
+    - sympy
+    - mpmath
+    - latexcodec
+    - jmespath
+    - ImageHash
+    - packaging
+    - toolz
+    - partd
+    - cloudpickle
+    - locket
+    - joblib
+    - dask
+    - s3transfer
+    - tqdm
+    - cf-python
+    - cf-plot
+    - cmor
+    - cmor-tables
+    - six
+    - cython
+    - sphinx
+    - scikit-learn
+    - cf-units
+    - setuptools
+    - grads
+    - mercurial
+    - r
+    - r-ncdf4
+    - rpy2
+    - r-devtools
+    - tk 
+    - udunits2
+    - udunits-devel
+    - tmux
+    - tornado
+    - libuuid
+    - mo_pack
+    - mo_unpack
+    - mpich
+    - libcurl-devel
+    - libuuid-devel
+    - tree
+    - qt-devel
+    - boost-devel
+    # Pip installs
+    - pip:
+       - nappy
+       - f90nml
+       - simplejson
+    # Testing
+    - pep8
+    - nose
+    - mock
+    - pytest
+    - pylint
+    - pycodestyle
+
+# FROM JAP: Unsupported
+###- atlas
+###- atlas-devel
+###- bbcp
+###- bbcp-config
+###- cmor-libs
+###- coda
+###- ddd
+###- diffuse
+###- dvipng
+#- emacs # UnsatisfiableError - conflict when trying to install
+###- emos
+###- ferret
+###- firefox
+###- gcc-gfortran
+###- geany
+###- gitk
+###- glibc-static
+###- grass
+###- grass-devel
+###- grass-libs
+###- grib_api
+###- grib_api-devel
+###- grib_api-fortran
+###- grib_api-python27
+###- gsl-static
+###- gv
+###- hdf
+###- hdf-devel
+###- ImageMagick
+###- JAGS
+###- ksh
+###- leafpad
+###- libcrayutil
+###- llvm-devel
+###- lxterminal
+###- mtk
+###- mtk-devel
+###- mtk-python27
+###- ncBrowse
+###- nccmp
+###- ncview
+###- nedit
+###- netcdf
+###- netcdf-c++
+###- netcdf-c++-devel
+###- netcdf-devel
+###- octave-doc
+###- octave-netcdf
+###- octave-octcdf
+###- parallel
+###- pdftk
+###- perl-core
+###- perl-Image-ExifTool
+###- perl-XML-Parser
+###- proj
+###- proj-devel
+###- proj-epsg
+###- proj-nad
+###- proj-static
+###- python27
+###- python27-backports-ssl_match_hostname
+###- python27-cdat_lite
+###- python27-cf
+###- python27-cf-checker
+###- python27-cfplot
+###- python27-cfview
+###- python27-cmor
+###- python27-Cython
+###- python27-dateutil
+###- python27-iris_sample_data
+###- python27-Jug
+###- python27-MarkupSafe
+###- python27-mpi4py-mpich
+###- python27-nappy
+###- python27-nc-time-axis
+###- python27-netCDF4
+###- python27-PIL
+###- python27-Pydap
+###- python27-pygeode
+###- python27-Pygments
+###- python27-pygobject2
+###- python27-pygtk2
+###- python27-pygtk2-libglade
+###- python27-PyYAML
+###- python27-ScientificPython
+###- python27-Shapely
+###- python27-wxPython
+###- R
+###- R-devel
+###- rjags
+###- R-ncdf
+###- subversion
+###- subversion-devel
+###- subversion-tools
+###- tcl
+###- tcl-devel
+###- tcsh
+###- thea
+###- tkdiff
+###- udunits
+###- udunits-devel
+###- umutil
+###- umutil-lib
+###- uuid
+###- uuid-devel
+###- valgrind
+###- vim-enhanced
+###- xconv
+###- xemacs
+###- xpdf
+
