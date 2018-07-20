@@ -17,6 +17,11 @@ Tools to actually create the recipe for each environment are:
 
  1. Create an environment and then generate a spec file from a YAML file: 
     `create-env-recipe.sh <yaml_file>`
+
+Tools to manage conda channels:
+
+ 1. Create a local conda channel based on packages in a jaspy environment:
+    `create-local-channel.sh <python_version>`
  
 
 ## Configuration
