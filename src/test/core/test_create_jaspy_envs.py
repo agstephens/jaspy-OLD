@@ -40,6 +40,7 @@ def _run(cmd, jaspy_base_dir, use_func=False):
 
 
 def _common_create_jaspy_env(py_version, env_name, conda_forge_count):
+    raise WAIT
     jaspy_base_dir = TEST_DIR
 
     # Clear out base dir
