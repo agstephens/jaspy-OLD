@@ -11,8 +11,7 @@ if [ ! $env_name ] ; then
     exit
 fi
 
-yaml=${env_name}.yml
-yaml_path=$(find ../environments -name $yaml)
+yaml_path=$(find ../environments -type d -name $env_name)
 
 py_version=$(echo $yaml_path | rev | cut -d/ -f3 | rev)
 bin_dir=${JASPY_BASE_DIR}/${py_version}/bin

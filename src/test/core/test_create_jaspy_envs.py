@@ -40,11 +40,10 @@ def _run(cmd, jaspy_base_dir, use_func=False):
 
 
 def _common_create_jaspy_env(py_version, env_name, conda_forge_count):
-    raise WAIT
     jaspy_base_dir = TEST_DIR
 
     # Clear out base dir
-    _clear_base_dir(jaspy_base_dir)
+#    _clear_base_dir(jaspy_base_dir)
 
     print('Download miniconda')
     cmd = '{} {}'.format(os.path.join(SCRIPT_DIR, 'install-miniconda.sh'), py_version)
@@ -66,7 +65,7 @@ def _common_create_jaspy_env(py_version, env_name, conda_forge_count):
     assert(resp.decode("utf-8").strip() == str(conda_forge_count))
 
 
-def test_create_jaspy_env_py27():
+def OFFtest_create_jaspy_env_py27():
     py_version = 'python2.7'
     env_name = 'jaspy2.7-8a1c02f6-rc3'
     conda_forge_count = 350
@@ -74,7 +73,7 @@ def test_create_jaspy_env_py27():
     _common_create_jaspy_env(py_version, env_name, conda_forge_count)
 
 
-def OFFtest_create_jaspy_env_py36():
+def test_create_jaspy_env_py36():
     py_version = 'python3.6'
     env_name = 'jaspy3.6-a946ea1d-rc3'
     conda_forge_count = 363
