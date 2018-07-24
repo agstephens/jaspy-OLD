@@ -1,4 +1,4 @@
-name: jaspy2.7-8a1c02f6-rc3
+name: jaspy3.6-a946ea1d-rc3
 channels:
     - conda-forge
     - defaults
@@ -124,6 +124,8 @@ dependencies:
       - nappy
       - f90nml
       - simplejson
+      - cf-python
+      - cf-plot
 # Testing
     - mock
     - nose

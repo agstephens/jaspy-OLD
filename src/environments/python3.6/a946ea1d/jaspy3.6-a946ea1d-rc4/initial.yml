@@ -124,6 +124,8 @@ dependencies:
       - nappy
       - f90nml
       - simplejson
+      - cf-python
+      - cf-plot
 # Testing
     - mock
     - nose

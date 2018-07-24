@@ -28,8 +28,8 @@ bin_dir=${JASPY_BASE_DIR}/${py_version}/bin
 export PATH=${bin_dir}:$PATH
 
 cmd="${bin_dir}/conda env create -n $env_name -f $initial_yaml_path"
-#echo "Running: $cmd"
-$cmd
+echo "Running: $cmd"
+#$cmd
 
 echo "Created conda environment: $env_name"
 source ./activate-jaspy-env.sh $env_name
@@ -48,7 +48,7 @@ conda-env export | sed -n -e '/- pip:/,$p' | grep -v "^prefix:" | sed -e 's/^/  
 
 spec_head=${spec_dir}/_head.yml
 echo "Generating header for explicit yaml file: $spec_head"
-cat $yaml_path | sed '/dependencies:/q' > $spec_head
+cat $initial_yaml_path | sed '/dependencies:/q' > $spec_head
 
 complete_yaml=${spec_dir}/complete.yml
 echo "Generating complete explicit yaml file: $complete_yaml"

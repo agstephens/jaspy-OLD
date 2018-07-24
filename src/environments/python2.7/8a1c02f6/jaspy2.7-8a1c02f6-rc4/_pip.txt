@@ -1,0 +1,8 @@
+    - pip:
+      - cf-plot==2.1.75
+      - cf-python==2.2.5
+      - f90nml==1.0.2
+      - msgpack==0.5.6
+      - nappy==1.1.4
+      - simplejson==3.16.0
+  
