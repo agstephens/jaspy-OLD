@@ -1,0 +1,31 @@
+name: jaspy2.7-m2-4.5.4-tiny
+channels:
+    - defaults
+dependencies:
+    - https://repo.anaconda.com/pkgs/main/linux-64/ca-certificates-2018.03.07-0.tar.bz2
+    - https://repo.anaconda.com/pkgs/main/linux-64/libgcc-ng-7.2.0-hdf63c60_3.tar.bz2
+    - https://repo.anaconda.com/pkgs/main/linux-64/libstdcxx-ng-7.2.0-hdf63c60_3.tar.bz2
+    - https://repo.anaconda.com/pkgs/main/linux-64/libffi-3.2.1-hd88cf55_4.tar.bz2
+    - https://repo.anaconda.com/pkgs/main/linux-64/ncurses-6.1-hf484d3e_0.tar.bz2
+    - https://repo.anaconda.com/pkgs/main/linux-64/openssl-1.0.2o-h20670df_0.tar.bz2
+    - https://repo.anaconda.com/pkgs/main/linux-64/tk-8.6.7-hc745277_3.tar.bz2
+    - https://repo.anaconda.com/pkgs/main/linux-64/zlib-1.2.11-ha838bed_2.tar.bz2
+    - https://repo.anaconda.com/pkgs/main/linux-64/libedit-3.1.20170329-h6b74fdf_2.tar.bz2
+    - https://repo.anaconda.com/pkgs/main/linux-64/readline-7.0-ha6073c6_4.tar.bz2
+    - https://repo.anaconda.com/pkgs/main/linux-64/sqlite-3.24.0-h84994c4_0.tar.bz2
+    - https://repo.anaconda.com/pkgs/main/linux-64/python-2.7.15-h1571d57_0.tar.bz2
+    - https://repo.anaconda.com/pkgs/main/linux-64/certifi-2018.4.16-py27_0.tar.bz2
+    - https://repo.anaconda.com/pkgs/main/linux-64/simplejson-3.15.0-py27h14c3975_0.tar.bz2
+    - https://repo.anaconda.com/pkgs/main/linux-64/setuptools-39.2.0-py27_0.tar.bz2
+    - https://repo.anaconda.com/pkgs/main/linux-64/wheel-0.31.1-py27_0.tar.bz2
+    - https://repo.anaconda.com/pkgs/main/linux-64/pip-10.0.1-py27_0.tar.bz2
+    - pip:
+      - atomicwrites==1.1.5
+      - attrs==18.1.0
+      - funcsigs==1.0.2
+      - more-itertools==4.2.0
+      - pluggy==0.6.0
+      - py==1.5.4
+      - pytest==3.6.3
+      - six==1.11.0
+  

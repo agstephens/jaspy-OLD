@@ -1,0 +1,8 @@
+name: jaspy2.7-m2-4.5.4-tiny
+channels:
+    - defaults
+dependencies:
+    - python=2.7
+    - simplejson
+    - pip:
+      - pytest
