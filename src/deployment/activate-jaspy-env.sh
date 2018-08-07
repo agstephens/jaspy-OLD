@@ -13,8 +13,8 @@ fi
 
 yaml_path=$(find ../environments -type d -name $env_name)
 
-py_version=$(echo $yaml_path | rev | cut -d/ -f3 | rev)
-bin_dir=${JASPY_BASE_DIR}/${py_version}/bin
+path_comps=$(echo $yaml_path | rev | cut -d/ -f2-3 | rev)
+bin_dir=${JASPY_BASE_DIR}/jaspy/miniconda_envs/jas${path_comps}/bin
 export PATH=${bin_dir}:$PATH
 
 echo "Activating conda environment: $env_name"

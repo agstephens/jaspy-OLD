@@ -4,6 +4,7 @@ dn = os.path.dirname
 
 USER = os.environ.get('USER')
 TEST_DIR = os.environ.get('JASPY_TEST_DIR', '/home/{}/jaspy-test'.format(USER))
+TEST_DIR = '/apps/contrib'
 
 
 THIS_DIR = dn(os.path.realpath(__file__))
@@ -41,21 +42,25 @@ def _run(cmd, jaspy_base_dir, use_func=False):
 
 def _common_create_jaspy_env(py_version, env_name, conda_forge_count):
     jaspy_base_dir = TEST_DIR
+    miniconda_code = env_name.split('-', 1)[1].replace(env_name.split('-')[-1], '').strip('-')
 
     # Clear out base dir
-#    _clear_base_dir(jaspy_base_dir)
+    mc_base_dir = os.path.join(jaspy_base_dir, 'jaspy/miniconda_envs', 'jas{}'.format(py_version),
+                                       miniconda_code) 
+    _clear_base_dir(mc_base_dir)
 
     print('Download miniconda')
     cmd = '{} {}'.format(os.path.join(SCRIPT_DIR, 'install-miniconda.sh'), py_version)
 
     _run(cmd, jaspy_base_dir)
-    assert(os.path.exists(os.path.join(jaspy_base_dir, py_version)))
+    assert(os.path.exists(os.path.join(jaspy_base_dir, 'jaspy/miniconda_envs', 'jas{}'.format(py_version))))
 
     print('Install a jaspy environment')
     cmd = '{} {}'.format(os.path.join(SCRIPT_DIR, 'install-jaspy-env.sh'), env_name)
 
     _run(cmd, jaspy_base_dir) 
-    assert(os.path.exists(os.path.join(jaspy_base_dir, py_version, 'envs', env_name)))
+    assert(os.path.exists(os.path.join(jaspy_base_dir, 'jaspy/miniconda_envs', 'jas{}'.format(py_version), 
+                                       miniconda_code, 'envs', env_name)))
 
     # Test by activating and listing contents of current environment
     bin_dir = os.path.join(jaspy_base_dir, py_version, 'bin')
@@ -65,16 +70,16 @@ def _common_create_jaspy_env(py_version, env_name, conda_forge_count):
     assert(resp.decode("utf-8").strip() == str(conda_forge_count))
 
 
-def OFFtest_create_jaspy_env_py27():
-    py_version = 'python2.7'
-    env_name = 'jaspy2.7-8a1c02f6-rc3'
+def test_create_jaspy_env_py27():
+    py_version = 'py2.7'
+    env_name = 'jaspy2.7-m2-4.5.4-rc4'
     conda_forge_count = 350
 
     _common_create_jaspy_env(py_version, env_name, conda_forge_count)
 
 
-def test_create_jaspy_env_py36():
-    py_version = 'python3.6'
+def OFFtest_create_jaspy_env_py36():
+    py_version = 'py3.6'
     env_name = 'jaspy3.6-a946ea1d-rc3'
     conda_forge_count = 363
 

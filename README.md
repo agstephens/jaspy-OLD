@@ -72,3 +72,61 @@ List the available `jaspy` conda environments:
 ```
 
 $JASPY_BASE_DIR/bin
+
+## Versioning
+
+There are different levels of versioning:
+
+ 1. Miniconda version, e.g.:
+  - m2-4.5.4:    https://repo.continuum.io/miniconda/Miniconda2-4.5.4-Linux-x86_64.sh
+  - m3-4.3.27.1: https://repo.continuum.io/miniconda/Miniconda3-4.3.27.1-Linux-x86_64.sh
+  - m3-4.5.4:    https://repo.continuum.io/miniconda/Miniconda3-4.5.4-Linux-x86_64.sh
+
+ 2. Python version:
+  - python 2.7.13 
+  - python 2.7.15
+  - python 3.4.1
+  - python 3.6.2
+
+ 3. Versions of the `jaspy` environments themselves, e.g.:
+  - jaspy-py27-0.1.0
+  - jaspy-py36-0.2.1
+
+To ensure reproducibility, the `jaspy` approach will involve creating a 
+separate environment for each `python` and `miniconda` version as follows:
+
+ - ${JASPY_BASE_DIR}/${PY_VERSION}/${JASPY_VERSION}/${MINICONDA_VERSION}
+
+### Note on reproducibility
+
+Whilst this is a verbose and complex approach it is the most transparent way to ensure
+that environments can be reproduced. However, we are aware that on any two systems there
+might be subtle differences (for example in compilers and installed libraries) that might
+lead to differences in the installation. Unfortunately, we do not have the resource to 
+guarantee exact reproducibility.
+
+### Sign-posting "easy" versions for users 
+
+It would be undesirable to expect users to keep track of exact versions (although some
+may choose to for their own reasons). We will therefore provide sign-posts that specify:
+
+ - "current"
+ - "_next"
+ - "_previous"
+
+The sign-posting will be done using ****SYMLINKS OR module load ****
+
+## Set-up using module files
+
+Users can activate a given `jaspy` environment using one of two methods:
+
+ 1. Source-activate:
+   `source ${JASPY_BASE_DIR}/bin/activate <jaspy_env_id>`
+
+ 2. Module files:
+   `module load contrib/jaspy<py_version>[/<jaspy_sub_version>]`
+
+This requires the following set-up:
+
+ - "current", "_next" and "previous" versions are symlinks in the `envs/` directory of a
+   given miniconda directory tree. 

@@ -24,7 +24,7 @@ if __name__ == '__main__':
 
     args = sys.argv[1:]
     if len(args) != 2:
-        print('Please provide two argument: the python version to install (e.g. "python3.6")' 
+        print('Please provide two arguments: the python version to install (e.g. "py3.6")' 
               ' and the attribute required (e.g. "source" or "md5")')
 
     else:

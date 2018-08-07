@@ -14,8 +14,8 @@ fi
 spec_file_dir=$(find ../environments -name $env_name)
 spec_file_path=${spec_file_dir}/complete.yml
 
-py_version=$(echo $spec_file_dir | rev | cut -d/ -f3 | rev)
-bin_dir=${JASPY_BASE_DIR}/${py_version}/bin
+path_comps=$(echo $spec_file_dir | rev | cut -d/ -f2-3 | rev)
+bin_dir=${JASPY_BASE_DIR}/jaspy/miniconda_envs/jas${path_comps}/bin
 export PATH=${bin_dir}:$PATH
 
 cmd="${bin_dir}/conda env create -n $env_name -f $spec_file_path"

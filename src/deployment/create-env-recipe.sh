@@ -22,14 +22,14 @@ spec_dir=$(dirname $initial_yaml_path)
 env_name=$(basename $spec_dir)
 
 # Get the python version from the next directory up
-py_version=$(echo $spec_dir | rev | cut -d/ -f3 | rev)
-bin_dir=${JASPY_BASE_DIR}/${py_version}/bin
+path_comps=$(echo $spec_dir | rev | cut -d/ -f2-3 | rev)
+bin_dir=${JASPY_BASE_DIR}/jaspy/miniconda_envs/jas${path_comps}/bin
 
 export PATH=${bin_dir}:$PATH
 
 cmd="${bin_dir}/conda env create -n $env_name -f $initial_yaml_path"
 echo "Running: $cmd"
-#$cmd
+$cmd
 
 echo "Created conda environment: $env_name"
 source ./activate-jaspy-env.sh $env_name

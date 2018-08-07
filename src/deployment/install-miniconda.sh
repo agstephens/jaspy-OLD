@@ -1,14 +1,22 @@
 #!/bin/bash
 
 source ./set-defaults.sh
-src_dir=$JASPY_BASE_DIR/src
-mkdir -p $src_dir
 
 py_version=$1
+
+if [ ! $py_version ] || [[ ! $py_version =~ ^py[0-9]\.[0-9]$ ]]; then
+    echo "ERROR: Please provide a valid python version in the form: py<n>.<m>"
+    exit
+fi
 
 url=$(./config-get.py $py_version source)
 fname=$(basename $url)
 md5=$(./config-get.py $py_version md5)
+short_id=$(./config-get.py $py_version short_id)
+
+jaspy_dir=${JASPY_BASE_DIR}/jaspy
+src_dir=${jaspy_dir}/src
+mkdir -p $src_dir
 
 target=$src_dir/$fname
 download=1
@@ -33,5 +41,6 @@ fi
 echo "Installing miniconda: $fname"
 chmod 750 $target
 
-prefix=${JASPY_BASE_DIR}/${py_version}
+prefix=${JASPY_BASE_DIR}/jaspy/miniconda_envs/jas${py_version}/${short_id}
+mkdir -p $(dirname $prefix)
 $target -b -p $prefix 
