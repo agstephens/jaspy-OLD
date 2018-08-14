@@ -70,7 +70,7 @@ def _common_create_jaspy_env(py_version, env_name, conda_forge_count):
     assert(resp.decode("utf-8").strip() == str(conda_forge_count))
 
 
-def test_create_jaspy_env_py27():
+def OFFtest_create_jaspy_env_py27():
     py_version = 'py2.7'
     env_name = 'jaspy2.7-m2-4.5.4-rc4'
     conda_forge_count = 350
@@ -78,9 +78,9 @@ def test_create_jaspy_env_py27():
     _common_create_jaspy_env(py_version, env_name, conda_forge_count)
 
 
-def OFFtest_create_jaspy_env_py36():
+def test_create_jaspy_env_py36():
     py_version = 'py3.6'
-    env_name = 'jaspy3.6-a946ea1d-rc3'
-    conda_forge_count = 363
+    env_name = 'jaspy3.6-m3-4.5.4-rc3'
+    conda_forge_count = 347
 
     _common_create_jaspy_env(py_version, env_name, conda_forge_count)
