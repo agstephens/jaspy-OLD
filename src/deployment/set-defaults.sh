@@ -2,7 +2,6 @@
 
 if [ ! $JASPY_BASE_DIR ]; then
     export JASPY_BASE_DIR=/apps/contrib
-#${HOME}/jaspy
     echo "Setting default base directory: JASPY_BASE_DIR=$JASPY_BASE_DIR"
 fi
 
