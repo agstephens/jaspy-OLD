@@ -1,7 +1,0 @@
-    - pip:
-      - f90nml==1.0.2
-      - msgpack==0.5.6
-      - nappy==1.1.4
-      - scitools-iris==2.1.0
-      - simplejson==3.16.0
-  

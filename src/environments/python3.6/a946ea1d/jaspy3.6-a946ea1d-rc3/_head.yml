@@ -1,5 +1,0 @@
-name: jaspy3.6-a946ea1d-rc3
-channels:
-    - conda-forge
-    - defaults
-dependencies:

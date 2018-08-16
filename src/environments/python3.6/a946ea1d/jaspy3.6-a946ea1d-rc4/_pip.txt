@@ -1,4 +1,0 @@
-    - pip:
-      - msgpack==0.5.6
-      - scitools-iris==2.1.0
-  
