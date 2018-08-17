@@ -44,7 +44,8 @@ cat $spec_file | sed -n -e '/^@EXPLICIT/,$p' | grep -v @EXPLICIT | sed -e 's/^/ 
 
 pip_spec_file=${spec_dir}/_pip.txt
 echo "Generating pip component of yaml file: $pip_spec_file"
-conda-env export | sed -n -e '/- pip:/,$p' | grep -v "^prefix:" | sed -e 's/^/  /'  > $pip_spec_file
+#conda env export | sed -n -e '/- pip:/,$p' | grep -v "^prefix:" | sed -e 's/^/  /'  > $pip_spec_file
+cat $initial_yaml_path | grep -A1000 "# Pip installs" > $pip_spec_file
 
 spec_head=${spec_dir}/_head.yml
 echo "Generating header for explicit yaml file: $spec_head"

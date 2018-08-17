@@ -1,4 +1,4 @@
-name: jaspy3.6-a946ea1d-rc3
+name: jaspy3.6-m3-4.5.4-r20180817
 channels:
     - conda-forge
     - defaults
@@ -23,22 +23,22 @@ dependencies:
     - esmf
     - fftw
     - filelock
-#    - fiona
+    - fiona
     - gdal
     - geopandas
     - geos
     - git
     - gnuplot
     - graphviz
-    - gsl
+    - gsl==2.2.1
     - h5py
     - hdf5
     - hdfeos2
     - hdfeos5
     - ImageHash
-#    - imagemagick
+    - imagemagick
     - ipython
-    - iris==2.1
+    - iris==2.1.0
     - iris-sample-data
     - jasper
     - jinja2
@@ -53,24 +53,28 @@ dependencies:
     - libuuid
     - locket
     - markupsafe
+    - matplotlib
     - matplotlib==2.2
     - mo_pack
+    - mock
     - mpi4py
     - mpich
     - mpmath
 #    - ncl
     - nco
     - nc-time-axis
-    - netcdf4
+    - netcdf4==1.4.0
     - netcdf-cxx4
     - netcdf-fortran
     - netcdftime
+    - nose
     - numpy==1.14
 #    - octave
     - packaging
-    - pandas
+    - pandas=0.23.1
     - partd
     - patsy
+    - pep8
     - perl
     - pillow
     - pillow 
@@ -79,17 +83,20 @@ dependencies:
     - pyaml
     - pybtex
     - pycairo
+    - pycodestyle
     - pydap
     - pygments
     - pygobject
     - pygrib
     - pyhdf
     - pyke
+    - pylint
     - pyparsing
     - pyproj
     - pyshp
     - pyspharm
     - pystan
+    - pytest
     - python=3.6
     - python-dateutil
     - pytz
@@ -97,7 +104,7 @@ dependencies:
     - pyzmq
     - r
     - r-devtools
-#    - r-ncdf4
+    - r-ncdf4
     - rpy2
     - s3transfer
     - scikit-learn
@@ -124,12 +131,3 @@ dependencies:
       - nappy
       - f90nml
       - simplejson
-#      - cf-python
-#      - cf-plot
-# Testing
-    - mock
-    - nose
-    - pep8
-    - pycodestyle
-    - pylint
-    - pytest
