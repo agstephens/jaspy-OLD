@@ -10,3 +10,7 @@ if [ ! -d $JASPY_BASE_DIR ]; then
     echo "Created base directory: $JASPY_BASE_DIR"
 fi
 
+if [ ! $JASPY_CHANNEL_URL ]; then
+    export JASPY_CHANNEL_URL=http://dist.ceda.ac.uk/jaspy
+    echo "Setting default for JASPY channel: JASPY_CHANNEL_URL=$JASPY_CHANNEL_URL"
+fi
