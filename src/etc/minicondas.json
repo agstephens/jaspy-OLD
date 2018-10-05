@@ -1,14 +1,23 @@
 {
   "minicondas": {
     "py2.7": {
-       "source": "https://repo.continuum.io/miniconda/Miniconda2-4.5.4-Linux-x86_64.sh",
-       "md5": "8a1c02f6941d8778f8afad7328265cf5",
-       "short_id": "m2-4.5.4"
+       "m2-4.5.4": {
+           "source": "https://repo.continuum.io/miniconda/Miniconda2-4.5.4-Linux-x86_64.sh",
+           "md5": "8a1c02f6941d8778f8afad7328265cf5",
+           "short_id": "m2-4.5.4"
+       },
+       "m2-4.5.11": {
+           "source": "https://repo.continuum.io/miniconda/Miniconda2-4.5.11-Linux-x86_64.sh",
+           "md5": "458324438b7b0e5afcc272b63d44195d",
+           "short_id": "m2-4.5.11"
+       }
     },
     "py3.6": {
-       "source": "https://repo.continuum.io/miniconda/Miniconda3-4.5.4-Linux-x86_64.sh",
-       "md5":    "a946ea1d0c4a642ddf0c3a26a18bb16d",
-       "short_id": "m3-4.5.4"
+       "m3-4.5.4": {
+           "source": "https://repo.continuum.io/miniconda/Miniconda3-4.5.4-Linux-x86_64.sh",
+           "md5":    "a946ea1d0c4a642ddf0c3a26a18bb16d",
+           "short_id": "m3-4.5.4"
+       }
     }
   }
 }
