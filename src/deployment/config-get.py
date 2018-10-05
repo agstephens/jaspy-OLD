@@ -19,11 +19,11 @@ def _get(py_version, miniconda_version, attribute):
         miniconda_version = m_start + '-' + _all_versions[-1] 
 
     try:
-        source = data['minicondas'][py_version][miniconda_version][attribute]
+        attr = data['minicondas'][py_version][miniconda_version][attribute]
     except:
         print('Could not find {} attribute for python version: "{}"'.format(attribute, py_version))
 
-    return source
+    return attr
 
 
 if __name__ == '__main__':
@@ -31,7 +31,7 @@ if __name__ == '__main__':
 
     parser = argparse.ArgumentParser()
     parser.add_argument("py_version", type=str, help="Python version")
-    parser.add_argument("attribute", type=str, choices=['source', 'md5', 'source_id'],
+    parser.add_argument("attribute", type=str, choices=['url', 'md5', 'short_id'],
                         help="Attribute")
 
     parser.add_argument('-m', '--miniconda-version', default='latest',

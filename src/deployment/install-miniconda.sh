@@ -9,7 +9,7 @@ if [ ! $py_version ] || [[ ! $py_version =~ ^py[0-9]\.[0-9]$ ]]; then
     exit
 fi
 
-url=$(./config-get.py $py_version source)
+url=$(./config-get.py $py_version url)
 fname=$(basename $url)
 md5=$(./config-get.py $py_version md5)
 short_id=$(./config-get.py $py_version short_id)
