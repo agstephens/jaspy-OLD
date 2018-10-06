@@ -42,7 +42,9 @@ url_base=${JASPY_CHANNEL_URL}/jas${path_comps}/${PLATFORM}
 # Write `complete-jaspy-channel.yml` environment file pointing to our URLs
 jaspy_channel_yaml=${spec_dir}/complete-jaspy-channel.yml
 
-cat ${complete_yaml_path} | sed -E 's|    - http.+/(.+)|    - '${url_base}'/\1|' > ${jaspy_channel_yaml}
+#cat ${complete_yaml_path} | sed -E 's|    - http.+/(.+)|    - '${url_base}'/\1|' > ${jaspy_channel_yaml}
+
+cat ${complete_yaml_path} | grep http | sed 's/    - //g' > ${jaspy_channel_yaml}
 
 echo "Wrote explicit YAML file pointing at JASPY channel:"
-echo "  $jaspy_channel_yaml"
+echo "  ${jaspy_channel_yaml}"
