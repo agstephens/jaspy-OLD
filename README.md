@@ -63,13 +63,41 @@ There are four workflows related to `jaspy`:
 ### Workflow 1: User
 
 Assuming that a Platform Administrator has installed `jaspy` then you can use it as
-explained here. Get your settings as recommended by your administrator:
+explained here. Get your settings as recommended by your administrator (which might be you):
+
+**1. Clone Jaspy**
 
 ```
-export JASPY_INSTALL_DIR=...GET_THIS_FROM_YOUR_ADMINISTRATOR...
-export PY_VERSION=python3.6
-export PATH=${JASPY_INSTALL_DIR}/${PY_VERSION}/bin:$PATH
+git clone https://github.com/agstephens/jaspy
+cd jaspy/src/deployment/
 ```
+
+**2. Set your base directory to install jaspy (and the conda packages)**
+
+```
+export JASPY_BASE_DIR=/usr/local/jaspy
+```
+
+**3. Install miniconda at the required version**
+
+```
+./install-miniconda.sh py3.7
+```
+
+**4. Install the conda environment required**
+
+```
+./install-jaspy-env isc-env-r20181009
+```
+
+**5. Activate and use the environment**
+
+```
+source ./activate-jaspy-env.sh isc-env-r20181009
+python -c 'import sys; print(sys.version)'
+```
+
+### Other features
 
 List the available `jaspy` conda environments:
 
