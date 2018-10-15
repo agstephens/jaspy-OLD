@@ -24,14 +24,15 @@ export PATH=${bin_dir}:$PATH
 
 cmd="${bin_dir}/conda create --name ${env_name} --file ${spec_file_path} -c ${JASPY_CHANNEL_URL}/jas${path_comps} --override-channels"
 echo "[INFO] Running: $cmd"
-$cmd
+#$cmd
 
 echo "[INFO] Created conda environment: $env_name"
 
 if [ -f $pip_file_path ]; then
     echo "[INFO] Installing additional packages via PIP..."
     source ${bin_dir}/activate $env_name
-    ${bin_dir}/install pip
+    ${bin_dir}/conda install pip
+    pip install --upgrade pip
     pip install -r ${pip_file_path} 
 fi
 
