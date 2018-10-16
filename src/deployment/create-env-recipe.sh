@@ -44,7 +44,7 @@ cat $spec_file | sed -n -e '/^@EXPLICIT/,$p' | grep -v @EXPLICIT | sed -e 's/^/ 
 
 _pip_spec_file=${spec_dir}/_pip.txt
 echo "Generating pip component of yaml file: $_pip_spec_file"
-cat $initial_yaml_path | grep -A1000 "# Pip installs" > $_pip_spec_file
+cat $initial_yaml_path | grep -A1000 -P "\-\spip:" > $_pip_spec_file
 
 pip_pkgs_file=${spec_dir}/pip.txt
 echo "[INFO] Generating text file of packages to pip install: $pip_pkgs_file"
