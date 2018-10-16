@@ -29,7 +29,7 @@ export PATH=${bin_dir}:$PATH
 
 cmd="${bin_dir}/conda env create -n $env_name -f $initial_yaml_path"
 echo "Running: $cmd"
-$cmd
+#$cmd
 
 echo "Created conda environment: $env_name"
 source ./activate-jaspy-env.sh $env_name
@@ -43,12 +43,12 @@ echo "Generating URLs file (excluding pip): $urls_file"
 cat $spec_file | sed -n -e '/^@EXPLICIT/,$p' | grep -v @EXPLICIT | sed -e 's/^/    - /' > $urls_file
 
 _pip_spec_file=${spec_dir}/_pip.txt
-echo "Generating pip component of yaml file: $_pip_spec_file"
+echo "[INFO] Generating pip component of yaml file: $_pip_spec_file"
 cat $initial_yaml_path | grep -A1000 -P "\-\spip:" > $_pip_spec_file
 
 pip_pkgs_file=${spec_dir}/pip.txt
 echo "[INFO] Generating text file of packages to pip install: $pip_pkgs_file"
-cat $initial_yaml_path | grep -A1000 -P "\-\spip:" | grep -vP "\-\spip:" | sed 's|\s*-\s*||g' > ${$pip_pkgs_file}
+cat $initial_yaml_path | grep -A1000 -P "\-\spip:" | grep -vP "\-\spip:" | sed 's|\s*-\s*||g' > ${pip_pkgs_file}
 
 spec_head=${spec_dir}/_head.yml
 echo "Generating header for explicit yaml file: $spec_head"
