@@ -24,7 +24,7 @@ export PATH=${bin_dir}:$PATH
 
 cmd="${bin_dir}/conda create --name ${env_name} --file ${spec_file_path} -c ${JASPY_CHANNEL_URL}/jas${path_comps} --override-channels"
 echo "[INFO] Running: $cmd"
-#$cmd
+$cmd
 
 echo "[INFO] Created conda environment: $env_name"
 
