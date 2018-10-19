@@ -29,7 +29,7 @@ export PATH=${bin_dir}:$PATH
 
 cmd="${bin_dir}/conda env create -n $env_name -f $initial_yaml_path"
 echo "Running: $cmd"
-#$cmd
+$cmd
 
 echo "Created conda environment: $env_name"
 source ./activate-jaspy-env.sh $env_name
