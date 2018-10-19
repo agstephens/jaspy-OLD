@@ -11,6 +11,10 @@ if [ ! $env_name ] ; then
     exit
 fi
 
+# If environment is actually a file path (e.g. "../environments/py2.7/m2-4.5.11/cc-env-r20181008/")
+# then just take the last component as the env name.
+env_name=$(basename $env_name)
+
 channel_urls_fname="channel-urls.txt"
 pip_fname="pip.txt"
 
