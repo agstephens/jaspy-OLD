@@ -1,5 +1,0 @@
-name: jaspy2.7-m2-4.5.4-rc4
-channels:
-    - conda-forge
-    - defaults
-dependencies:
