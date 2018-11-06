@@ -26,7 +26,7 @@ path_comps=$(echo $spec_file_dir | rev | cut -d/ -f2-3 | rev)
 bin_dir=${JASPY_BASE_DIR}/jaspy/miniconda_envs/jas${path_comps}/bin
 export PATH=${bin_dir}:$PATH
 
-cmd="${bin_dir}/conda create --name ${env_name} --file ${spec_file_path} -c ${JASPY_CHANNEL_URL}/jas${path_comps} --override-channels"
+cmd="${bin_dir}/conda create --name ${env_name} --file ${spec_file_path} -c ${JASPY_CHANNEL_URL}/jas${path_comps} --override-channels --yes"
 echo "[INFO] Running: $cmd"
 $cmd
 
