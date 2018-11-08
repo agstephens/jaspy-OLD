@@ -10,7 +10,7 @@
 #    - https://repo.anaconda.com/pkgs/main
 # 3. Put everything under: the JASPY channel URLs
 
-source ./set-defaults.sh
+source ./common.cfg
 
 PLATFORM=linux-64
 

@@ -1,6 +1,7 @@
 #!/bin/bash
 
-source ./set-defaults.sh
+source ./common.cfg
+
 PLATFORM="linux-64"
 
 if [ ! $JASPY_SERVER_PATH ]; then

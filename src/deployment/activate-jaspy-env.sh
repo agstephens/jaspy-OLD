@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source ./set-defaults.sh
+source ./common.cfg
 
 env_name=$1
 
@@ -11,7 +11,7 @@ if [ ! $env_name ] ; then
     exit
 fi
 
-yaml_path=$(find ../environments -type d -name $env_name)
+yaml_path=$(get_env_path $env_name)
 
 path_comps=$(echo $yaml_path | rev | cut -d/ -f2-3 | rev)
 bin_dir=${JASPY_BASE_DIR}/jaspy/miniconda_envs/jas${path_comps}/bin

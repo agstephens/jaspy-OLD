@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source ./set-defaults.sh
+source ./common.cfg
 
 py_version=$1
 
