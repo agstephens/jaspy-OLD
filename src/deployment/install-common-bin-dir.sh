@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source ./set-defaults.sh
+source ./common.cfg
 
 template_dir=../templates
 bin_dir=${JASPY_BASE_DIR}/jaspy/bin

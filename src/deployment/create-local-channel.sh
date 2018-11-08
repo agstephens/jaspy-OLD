@@ -11,7 +11,7 @@
 # 5. Runs a test search
 #
 
-source ./set-defaults.sh
+source ./common.cfg
 
 env_name=$1
 

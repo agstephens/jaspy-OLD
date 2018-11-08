@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source ./set-defaults.sh
+source ./common.cfg
 
 env_name=$1
 
@@ -18,7 +18,8 @@ env_name=$(basename $env_name)
 channel_urls_fname="channel-urls.txt"
 pip_fname="pip.txt"
 
-spec_file_dir=$(find ../environments -name $env_name)
+spec_file_dir=$(get_env_path $env_name)
+
 spec_file_path=${spec_file_dir}/${channel_urls_fname}
 pip_file_path=${spec_file_dir}/${pip_fname}
 

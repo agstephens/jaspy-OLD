@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source ./set-defaults.sh
+source ./common.cfg
 
 initial_yaml_path=$1
 
