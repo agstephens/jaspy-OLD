@@ -5,14 +5,14 @@ source ./common.cfg
 initial_yaml_path=$1
 
 if [ ! $initial_yaml_path ] || [ ! -f $initial_yaml_path ]; then
-    echo "ERROR: Please provide valid YAML environment file as only argument."
+    echo "[ERROR] Please provide valid YAML environment file as only argument."
     exit
 fi
 
 initial_yaml=$(basename $initial_yaml_path)
 
 if [ $initial_yaml != 'initial.yml' ]; then
-    echo "ERROR: Input YAML file must be called: 'initial.yml'."
+    echo "[ERROR] Input YAML file must be called: 'initial.yml'."
     exit
 fi
 
@@ -28,18 +28,23 @@ bin_dir=${JASPY_BASE_DIR}/jaspy/miniconda_envs/jas${path_comps}/bin
 export PATH=${bin_dir}:$PATH
 
 cmd="${bin_dir}/conda env create -n $env_name -f $initial_yaml_path"
-echo "Running: $cmd"
+echo "[INFO] Running: $cmd"
 $cmd
 
-echo "Created conda environment: $env_name"
+if [ $? -ne 0 ]; then
+    echo "[ERROR] 'conda env create' FAILED, so exiting."
+    exit
+fi
+
+echo "[INFO] Created conda environment: $env_name"
 source ./activate-jaspy-env.sh $env_name
 
 spec_file=${spec_dir}/_explicit.txt
-echo "Generating explicit spec file (excluding pip): $spec_file"
+echo "[INFO] Generating explicit spec file (excluding pip): $spec_file"
 conda list --explicit > $spec_file 
 
 urls_file=${spec_dir}/_urls.txt
-echo "Generating URLs file (excluding pip): $urls_file"
+echo "[INFO] Generating URLs file (excluding pip): $urls_file"
 cat $spec_file | sed -n -e '/^@EXPLICIT/,$p' | grep -v @EXPLICIT | sed -e 's/^/    - /' > $urls_file
 
 _pip_spec_file=${spec_dir}/_pip.txt
@@ -51,10 +56,10 @@ echo "[INFO] Generating text file of packages to pip install: $pip_pkgs_file"
 cat $initial_yaml_path | grep -A1000 -P "\-\spip:" | grep -vP "\-\spip:" | sed 's|\s*-\s*||g' > ${pip_pkgs_file}
 
 spec_head=${spec_dir}/_head.yml
-echo "Generating header for explicit yaml file: $spec_head"
+echo "[INFO] Generating header for explicit yaml file: $spec_head"
 cat $initial_yaml_path | sed '/dependencies:/q' > $spec_head
 
 complete_yaml=${spec_dir}/complete.yml
-echo "Generating complete explicit yaml file: $complete_yaml"
+echo "[INFO] Generating complete explicit yaml file: $complete_yaml"
 cat $spec_head $urls_file $pip_spec_file > $complete_yaml 
 
