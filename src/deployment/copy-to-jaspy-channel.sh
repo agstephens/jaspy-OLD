@@ -72,7 +72,7 @@ for binary in $(cat ${channel_urls_path} | grep http | sed 's|.*/||g'); do
 done
 
 echo "[INFO] Copying binaries to remote jaspy channel server: ${JASPY_SERVER_PATH}"
-cmd="rsync -q ${JASPY_XFER_CACHE_DIR}/* ${target_dir}/"
+cmd="rsync --size-only -v ${JASPY_XFER_CACHE_DIR}/* ${target_dir}/"
 echo "[INFO] Running command: $cmd"
 $cmd 
 
