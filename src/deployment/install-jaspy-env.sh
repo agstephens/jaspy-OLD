@@ -29,6 +29,11 @@ path_comps=$(echo $spec_file_dir | rev | cut -d/ -f2-3 | rev)
 py_version=$(echo $path_comps | cut -d/ -f1)
 ./install-miniconda.sh ${py_version}
 
+if [ $? -ne 0 ]; then
+    echo "[ERROR] Miniconda install failed so stopping."
+    exit
+fi
+
 bin_dir=${JASPY_BASE_DIR}/jaspy/miniconda_envs/jas${path_comps}/bin
 export PATH=${bin_dir}:$PATH
 
