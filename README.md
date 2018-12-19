@@ -1,6 +1,25 @@
 # jaspy
 Conda environments for JASMIN (and beyond)
 
+## Quickstart
+
+If you need a quick Python environment, try these...
+
+### Quickstart: Python2.7
+
+TBA...
+
+### Quickstart: Python3.7
+
+```
+$ git clone https://github.com/agstephens/jaspy
+$ cd jaspy/src/deployment/
+$ export JASPY_BASE_DIR=/usr/local/jaspy
+$ ./install-miniconda.sh py3.7
+$ ./install-jaspy-env.sh jaspy3.7-m3-4.5.11-r20181219
+$ python -c 'import sys; print(sys.version)'
+```
+
 ## Overview
 
 This package provides the instructions and full specifications for a
@@ -87,7 +106,7 @@ export JASPY_BASE_DIR=/usr/local/jaspy
 **4. Install the conda environment required**
 
 ```
-./install-jaspy-env isc-env-r20181009
+./install-jaspy-env.sh isc-env-r20181009
 ```
 
 **5. Activate and use the environment**
