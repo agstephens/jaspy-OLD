@@ -1,6 +1,25 @@
 # jaspy
 Conda environments for JASMIN (and beyond)
 
+## Quickstart
+
+If you need a quick Python environment, try these...
+
+### Quickstart: Python2.7
+
+TBA...
+
+### Quickstart: Python3.7
+
+```
+$ git clone https://github.com/agstephens/jaspy
+$ cd jaspy/src/deployment/
+$ export JASPY_BASE_DIR=/usr/local/jaspy
+$ ./install-miniconda.sh py3.7
+$ ./install-jaspy-env.sh jaspy3.7-m3-4.5.11-r20181219
+$ python -c 'import sys; print(sys.version)'
+```
+
 ## Overview
 
 This package provides the instructions and full specifications for a
@@ -87,7 +106,7 @@ export JASPY_BASE_DIR=/usr/local/jaspy
 **4. Install the conda environment required**
 
 ```
-./install-jaspy-env isc-env-r20181009
+./install-jaspy-env.sh isc-env-r20181009
 ```
 
 **5. Activate and use the environment**
@@ -102,8 +121,8 @@ python -c 'import sys; print(sys.version)'
 List the available `jaspy` conda environments:
 
 ```
-
-$JASPY_BASE_DIR/bin
+$JASPY_BASE_DIR/bin/list-conda-envs.sh
+```
 
 ## Versioning
 
@@ -117,7 +136,6 @@ There are different levels of versioning:
  2. Python version:
   - python 2.7.13 
   - python 2.7.15
-  - python 3.4.1
   - python 3.6.2
 
  3. Versions of the `jaspy` environments themselves, e.g.:
@@ -127,7 +145,11 @@ There are different levels of versioning:
 To ensure reproducibility, the `jaspy` approach will involve creating a 
 separate environment for each `python` and `miniconda` version as follows:
 
- - ${JASPY_BASE_DIR}/${PY_VERSION}/${JASPY_VERSION}/${MINICONDA_VERSION}
+ - `${JASPY_BASE_DIR}/jas${PY_VERSION}/${MINICONDA_VERSION}/envs/${JASPY_ENV_NAME}`
+
+E.g.:
+
+ - `/apps/contrib/jaspy/miniconda_envs/jaspy3.7/m3-4.5.11/envs/jaspy3.7-m3-4.5.11-r20181218`
 
 ### Note on reproducibility
 
@@ -145,8 +167,6 @@ may choose to for their own reasons). We will therefore provide sign-posts that 
  - "current"
  - "_next"
  - "_previous"
-
-The sign-posting will be done using ****SYMLINKS OR module load ****
 
 ## Set-up using module files
 
