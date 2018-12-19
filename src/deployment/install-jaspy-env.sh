@@ -24,6 +24,11 @@ spec_file_path=${spec_file_dir}/${channel_urls_fname}
 pip_file_path=${spec_file_dir}/${pip_fname}
 
 path_comps=$(echo $spec_file_dir | rev | cut -d/ -f2-3 | rev)
+
+# Run miniconda installer: does nothing if already installed
+py_version=$(echo $path_comps | cut -d/ -f1)
+./install-miniconda.sh ${py_version}
+
 bin_dir=${JASPY_BASE_DIR}/jaspy/miniconda_envs/jas${path_comps}/bin
 export PATH=${bin_dir}:$PATH
 

@@ -5,7 +5,7 @@ source ./common.cfg
 py_version=$1
 
 if [ ! $py_version ] || [[ ! $py_version =~ ^py[0-9]\.[0-9]$ ]]; then
-    echo "ERROR: Please provide a valid python version in the form: py<n>.<m>"
+    echo "[ERROR] Please provide a valid python version in the form: py<n>.<m>"
     exit
 fi
 
@@ -26,21 +26,30 @@ if [ -f $target ] ; then
     local_md5=$(md5sum $target | cut -d' ' -f1)
 
     if [ $md5 == $local_md5 ]; then
-        echo "Up-to-date miniconda script already available locally."
+        echo "[WARN] Up-to-date miniconda script already available locally."
         download=0
     fi
 fi
 
 if [ $download -eq 1 ] ; then
    # Download new version
-   echo "Found URL for python version: $py_version"
-   echo "Downloading: $url"
+   echo "[INFO] Found URL for python version: $py_version"
+   echo "[INFO] Downloading: $url"
    wget -O $target $url
 fi
 
-echo "Installing miniconda: $fname"
-chmod 750 $target
-
+# Check if already installed, if so: do nothing. 
 prefix=${JASPY_BASE_DIR}/jaspy/miniconda_envs/jas${py_version}/${short_id}
-mkdir -p $(dirname $prefix)
-$target -b -p $prefix 
+
+if [ -d $prefix ] ; then
+    echo "[INFO] Environment dircectory already exists at:"
+    echo "       $prefix"
+else
+    echo "[INFO] Installing miniconda: $fname"
+    chmod 750 $target
+
+    mkdir -p $(dirname $prefix)
+    $target -b -p $prefix 
+fi
+
+
