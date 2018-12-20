@@ -10,3 +10,16 @@ def test_import_netCDF4():
 def test_import_cftime():
     import cftime
 
+def test_import_gdal():
+    import gdal
+
+def test_import_matplotlib():
+    import matplotlib
+    matplotlib.use('Agg')
+    import matplotlib.pyplot as plt
+    plt.plot(range(5))
+
+    plotfile = '/tmp/test.png'
+    plt.savefig(plotfile)
+    assert(os.path.isfile(plotfile))
+
