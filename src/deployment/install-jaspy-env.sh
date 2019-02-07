@@ -46,7 +46,7 @@ echo "[INFO] Created conda environment: $env_name"
 if [ -f $pip_file_path ]; then
     echo "[INFO] Installing additional packages via PIP..."
     source ${bin_dir}/activate $env_name
-    ${bin_dir}/conda install pip
+    ${bin_dir}/conda install --yes pip
     pip install --upgrade pip
     pip install -r ${pip_file_path} 
 fi
