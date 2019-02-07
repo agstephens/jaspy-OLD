@@ -61,9 +61,11 @@ function create_modulefile {
 echo "Loop through all known environments and create module file..."
 for env_dir in $all_envs ; do
     for envt in $(ls $env_dir) ; do
+
         dr=${env_dir}/${envt}
         echo "Creating modulefiles for: $dr"
         create_modulefile $dr
+
     done
 done
 
