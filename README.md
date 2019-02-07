@@ -189,3 +189,5 @@ This requires the following set-up:
  - Conda and its related ecosystem (`conda-forge` channel etc.,) provide a superb foundation for building and managing software environments. However, given the collaborative nature of the ecosystem there are dependencies that are out of our control, such as an update (or removal) to a package version, which can lead to problems.
   - In particular, a simple YAML environment description might resolve fine on one day but might not be repeatable the next day. A solution to this problem is to capture the exact environment in a set of binary files and cache them on our own server.
   - The jaspy channels are a place where we know that we can describe an exact environment independently of any perturbations that might be happening in other conda recipes and channels.
+
+2. 
