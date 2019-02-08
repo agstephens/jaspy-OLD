@@ -42,7 +42,7 @@ fi
 prefix=${JASPY_BASE_DIR}/jaspy/miniconda_envs/jas${py_version}/${short_id}
 
 if [ -d $prefix ] ; then
-    echo "[INFO] Environment dircectory already exists at:"
+    echo "[INFO] Environment directory already exists at:"
     echo "       $prefix"
 else
     echo "[INFO] Installing miniconda: $fname"
