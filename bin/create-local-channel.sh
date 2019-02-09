@@ -11,7 +11,8 @@
 # 5. Runs a test search
 #
 
-source ./common.cfg
+SCRIPTDIR=$(dirname $0)
+source ${SCRIPTDIR}/common.cfg
 
 env_name=$1
 
@@ -62,13 +63,6 @@ for pkg in *.tar.bz2 ; do
 done
 
 echo "Added $count packages to local channel." 
-
-#echo "Before indexing the new channel, create empty 'noarch' directory and run 'conda index'..."
-#mkdir -p ${noarch_dir}
-#pushd ${noarch_dir}
-#cmd="${bin_dir}/conda index"
-#echo "Running: $cmd"
-#popd
 
 echo "Index the new channel: $linux_64_dir"
 cmd="${bin_dir}/conda index $linux_64_dir"

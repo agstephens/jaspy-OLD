@@ -1,6 +1,7 @@
 #!/bin/bash
 
-source ./common.cfg
+SCRIPTDIR=$(dirname $0)
+source ${SCRIPTDIR}/common.cfg
 
 channel_path=$1
 

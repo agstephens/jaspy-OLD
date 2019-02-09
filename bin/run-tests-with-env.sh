@@ -1,6 +1,7 @@
 #!/bin/bash
 
-source ./common.cfg
+SCRIPTDIR=$(dirname $0)
+source ${SCRIPTDIR}/common.cfg
 
 env_name=$1
 
@@ -24,7 +25,7 @@ source activate $env_name
 
 tests_dir=environment/python${py_version}
 echo "[INFO] Running tests at: $tests_dir"
-cd ../test/
+cd ${SCRIPTDIR}/test/
 
 pytest $tests_dir
 

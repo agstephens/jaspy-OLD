@@ -1,6 +1,7 @@
 #!/bin/bash
 
-source ./common.cfg
+SCRIPTDIR=$(dirname $0)
+source ${SCRIPTDIR}/common.cfg
 
 template_dir=../templates
 bin_dir=${JASPY_BASE_DIR}/jaspy/bin

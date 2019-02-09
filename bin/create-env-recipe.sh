@@ -1,6 +1,7 @@
 #!/bin/bash
 
-source ./common.cfg
+SCRIPTDIR=$(dirname $0)
+source $SCRIPTDIR/common.cfg
 
 initial_yaml_path=$1
 
@@ -37,7 +38,7 @@ if [ $? -ne 0 ]; then
 fi
 
 echo "[INFO] Created conda environment: $env_name"
-source ./activate-jaspy-env.sh $env_name
+source ${SCRIPTDIR}/activate-jaspy-env.sh $env_name
 
 spec_file=${spec_dir}/_explicit.txt
 echo "[INFO] Generating explicit spec file (excluding pip): $spec_file"

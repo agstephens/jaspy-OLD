@@ -7,8 +7,9 @@
 # 2. Detects all jaspy environments installed
 # 3. Writes a modulefile for each jaspy environment installed
 #
- 
-source ./common.cfg
+
+SCRIPTDIR=$(dirname $0)
+source ${SCRIPTDIR}/common.cfg
 
 DO_INSTALL=$1
 

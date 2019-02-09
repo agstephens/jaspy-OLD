@@ -1,15 +1,27 @@
 #!/usr/bin/env python
 
+import os
 import json
 import sys
 import argparse
 
 
-config = '../etc/minicondas.json'
+def _find_config_file():
 
+    config = 'etc/minicondas.json'
+
+    while not os.path.isfile(config):
+        config = '../{}'.format(config)
+
+        if len(config) > 70:
+            raise Exception('Cannot locate config file "etc/minicondas.json".')
+
+    return config
 
     
 def _get(py_version, miniconda_version, attribute):
+
+    config = _find_config_file()
 
     with open(config) as reader:
         data = json.load(reader)

@@ -10,7 +10,8 @@
 #    - https://repo.anaconda.com/pkgs/main
 # 3. Put everything under: the JASPY channel URLs
 
-source ./common.cfg
+SCRIPTDIR=$(dirname $0)
+source ${SCRIPTDIR}/common.cfg
 
 PLATFORM=linux-64
 
