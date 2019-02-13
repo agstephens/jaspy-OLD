@@ -4,16 +4,21 @@ SCRIPTDIR=$(dirname $0)
 source ${SCRIPTDIR}/common.cfg
 
 py_version=$1
+miniconda_version=$2
 
 if [ ! $py_version ] || [[ ! $py_version =~ ^py[0-9]\.[0-9]$ ]]; then
     echo "[ERROR] Please provide a valid python version in the form: py<n>.<m>"
     exit
 fi
 
-url=$(./config-get.py $py_version url)
+if [ ! $miniconda_version ]; then
+    miniconda_version="latest"
+fi
+
+url=$(${SCRIPTDIR}/config-get.py -m $miniconda_version $py_version url)
 fname=$(basename $url)
-md5=$(./config-get.py $py_version md5)
-short_id=$(./config-get.py $py_version short_id)
+md5=$(${SCRIPTDIR}/config-get.py -m $miniconda_version $py_version md5)
+short_id=$(${SCRIPTDIR}/config-get.py -m $miniconda_version $py_version short_id)
 
 jaspy_dir=${JASPY_BASE_DIR}/jaspy
 src_dir=${jaspy_dir}/src
@@ -43,7 +48,7 @@ fi
 prefix=${JASPY_BASE_DIR}/jaspy/miniconda_envs/jas${py_version}/${short_id}
 
 if [ -d $prefix ] ; then
-    echo "[INFO] Environment directory already exists at:"
+    echo "[INFO] Miniconda base directory already exists at:"
     echo "       $prefix"
 else
     echo "[INFO] Installing miniconda: $fname"

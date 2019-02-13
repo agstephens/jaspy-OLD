@@ -28,7 +28,9 @@ path_comps=$(echo $spec_file_dir | rev | cut -d/ -f2-3 | rev)
 
 # Run miniconda installer: does nothing if already installed
 py_version=$(echo $path_comps | cut -d/ -f1)
-${SCRIPTDIR}/install-miniconda.sh ${py_version}
+miniconda_version=$(echo $path_comps | cut -d/ -f2)
+
+${SCRIPTDIR}/install-miniconda.sh ${py_version} ${miniconda_version}
 
 if [ $? -ne 0 ]; then
     echo "[ERROR] Miniconda install failed so stopping."
