@@ -18,6 +18,7 @@ function list_envs {
     done
 }
 
+echo
 echo "JASPY Environment recipes"
 echo "-------------------------"
 echo

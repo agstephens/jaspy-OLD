@@ -7,6 +7,11 @@
 #   so the jaspy scripts can use it.
 #
 
+SCRIPTDIR=$(dirname $0)
+source ${SCRIPTDIR}/common.cfg
+
+cd ${SCRIPTDIR}/..
+
 repo=$1
 
 if [ ! $repo ] || [ ! -d $repo ] || [ ! -d $repo/environments ]; then
@@ -19,8 +24,7 @@ fi
 symlink=environments-$(basename $repo)
 
 target=$repo/environments
-echo "[INFO] Creating sym-link: ../$symlink --> $target"
-cd ../
+echo "[INFO] Creating sym-link: $symlink --> $target"
 
 if [ -L $symlink ]; then
     rm $symlink
